@@ -1,6 +1,10 @@
 # Freedom n' Privacy
 
-G'day mate! One Freedom and privacy please.
+G'day mate! Freedom and privacy, please.
+
+*A curated collection of recommended tools, software, and resources **that respect** **<ins>YOUR</ins>** freedom and privacy.*
+
+---
 
 ## Minecraft
 
@@ -24,17 +28,6 @@ More coming soon.
 
 ---
 
-## VPN
-
-<details>
-<summary>🔐 Recommended VPN</summary>
-
-- [Mullvad VPN](https://mullvad.net)
-
-</details>
-
----
-
 ## Browser
 
 <details>
@@ -50,5 +43,27 @@ More coming soon.
 
 - [IceRaven](https://github.com/fork-maintainers/iceraven-browser)
 - [WebWire](https://github.com/WebWire-Network/webwire)
+
+</details>
+
+---
+
+## VPN
+
+<details>
+<summary>🔐 Recommended VPN</summary>
+
+- [Mullvad VPN](https://mullvad.net)
+
+</details>
+
+---
+
+## Maps
+
+<details>
+<summary>🗺 Privacy-Friendly Maps</summary>
+
+- [CoMaps](https://www.comaps.app)
 
 </details>

@@ -22,8 +22,6 @@ G'day mate! Freedom and privacy, please.
 - [No Chat Reports](https://modrinth.com/mod/no-chat-reports)
 - [No Telemetry](https://modrinth.com/mod/no-telemetry)
 
-More coming soon.
-
 </details>
 
 ---
@@ -31,7 +29,7 @@ More coming soon.
 ## Browser
 
 <details>
-<summary>🖥 Desktop</summary>
+<summary>🖥 Desktop Browser</summary>
 
 - [LibreWolf](https://librewolf.net)
 - [Mullvad Browser](https://mullvad.net/browser)
@@ -39,7 +37,7 @@ More coming soon.
 </details>
 
 <details>
-<summary>📱 Mobile</summary>
+<summary>📱 Mobile Browser</summary>
 
 - [IceRaven](https://github.com/fork-maintainers/iceraven-browser)
 - [WebWire](https://github.com/WebWire-Network/webwire)
@@ -51,7 +49,7 @@ More coming soon.
 ## VPN
 
 <details>
-<summary>🔐 Recommended VPN</summary>
+<summary>🔐 VPN</summary>
 
 - [Mullvad VPN](https://mullvad.net)
 
@@ -62,8 +60,19 @@ More coming soon.
 ## Maps
 
 <details>
-<summary>🗺 Privacy-Friendly Maps</summary>
+<summary>🗺 Maps</summary>
 
 - [CoMaps](https://www.comaps.app)
+</details>
 
+</details>
+
+---
+
+## Web Downloader
+
+<details>
+<summary>💾 Web Downloader</summary>
+
+- [Cobalt Tools](https://cobalt.tools)
 </details>

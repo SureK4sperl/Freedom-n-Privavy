@@ -6,6 +6,9 @@
     <title>Freedom n' Privacy</title>
     
     <meta name="robots" content="noindex, nofollow, noarchive">
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='monospace' font-weight='bold' fill='%233b82f6'>F</text></svg>">
+    
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
@@ -83,6 +86,22 @@
         /* Content Area */
         #readme-content { margin-top: 20px; min-height: 300px; }
 
+        /* Terminal Loader Styles */
+        .terminal-loader {
+            background: #111;
+            padding: 25px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            box-shadow: inset 0 0 15px rgba(0,0,0,0.5);
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--text-color);
+        }
+        
+        .terminal-loader p { margin: 8px 0; font-size: 0.95rem; }
+        .term-accent { color: var(--accent-blue); font-weight: bold; margin-right: 8px; }
+        .blink { animation: blink 1s step-end infinite; color: var(--header-color); }
+        @keyframes blink { 50% { opacity: 0; } }
+
         details {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -137,7 +156,7 @@
         <header>
             <h1>Freedom n' Privacy</h1>
             <p>Curated tools that respect <b>YOUR</b> digital rights.</p>
-            <a href="https://github.com/k4sprl/Freedom-n-Privacy" class="btn-github">GitHub Repository</a>
+            <a href="https://github.com/k4sprl/Freedom-n-Privacy" class="btn-github" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
         </header>
 
         <div class="search-container">
@@ -145,12 +164,16 @@
         </div>
 
         <div id="readme-content">
-            <p>Initializing secure connection...</p>
+            <div class="terminal-loader">
+                <p><span class="term-accent">></span> establishing connection...</p>
+                <p><span class="term-accent">></span> fetching repository payload...</p>
+                <p><span class="term-accent">></span> parsing markdown<span class="blink">_</span></p>
+            </div>
         </div>
     </div>
 
     <footer>
-        <p>Released under the <b>Unlicense</b> | Open Source Project</p>
+        <p>Released under the <a href="https://unlicense.org/" target="_blank" rel="noopener noreferrer"><b>Unlicense</b></a> | Open Source Project</p>
     </footer>
 
     <script>
@@ -174,23 +197,38 @@
                     detail.appendChild(wrapper);
                 });
             } catch (e) {
-                document.getElementById('readme-content').innerHTML = "Error loading tools.";
+                document.getElementById('readme-content').innerHTML = `
+                    <div class="terminal-loader">
+                        <p style="color: #ff6b6b;"><span class="term-accent">></span> ERROR: Failed to load tools payload.</p>
+                        <p><span class="term-accent">></span> check network connection<span class="blink">_</span></p>
+                    </div>
+                `;
             }
         }
 
-        // Search Functionality
+        // Improved Search Functionality
         function filterContent() {
-            const query = document.getElementById('searchBar').value.toLowerCase();
+            const searchInput = document.getElementById('searchBar').value;
+            const query = searchInput.toLowerCase().trim();
+            const terms = query.split(/\s+/); // Splits query by spaces to allow multi-word searching
             const categories = document.querySelectorAll('details');
 
             categories.forEach(cat => {
-                const text = cat.innerText.toLowerCase();
-                if (text.includes(query)) {
+                // Feature #1: Reset completely when search is empty
+                if (query === "") {
                     cat.style.display = "block";
-                    // Optional: Auto-open if searching
-                    if (query.length > 1) {
-                        cat.open = true; // Uncomment if you want them to pop open while typing
-                    }
+                    cat.open = false; 
+                    return;
+                }
+
+                const text = cat.innerText.toLowerCase();
+                
+                // Feature #2: Check if ALL words typed are found inside the category
+                const matches = terms.every(term => text.includes(term));
+
+                if (matches) {
+                    cat.style.display = "block";
+                    cat.open = true; // Auto-open when matched
                 } else {
                     cat.style.display = "none";
                 }

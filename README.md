@@ -5,18 +5,25 @@ G'day mate! Freedom and privacy, please.
 A curated collection of recommended tools, software, websites and more! **Which respect** **YOUR** freedom and privacy.
 
 ---
+## Bulk Deletion
+<details>
+<summary>Discord</summary>
+
+- [Discrub](https://github.com/prathercc/discrub-ext)
+
+</details>
 
 ## Minecraft
 
 <details>
-<summary>🚀 Launcher</summary>
+<summary>Launcher</summary>
 
 - [Prism Launcher](https://prismlauncher.org)
 
 </details>
 
 <details>
-<summary>🧩 Mods (Modrinth)</summary>
+<summary>Mods (Modrinth)</summary>
 
 - [No Chat Restrictions](https://modrinth.com/mod/no-chat-restrictions)
 - [No Chat Reports](https://modrinth.com/mod/no-chat-reports)
@@ -29,7 +36,7 @@ A curated collection of recommended tools, software, websites and more! **Which 
 ## Browser
 
 <details>
-<summary>🖥️ Desktop Browser</summary>
+<summary>Desktop Browser</summary>
 
 - [Tor Browser](https://www.torproject.org)
 - [Mullvad Browser](https://mullvad.net/browser)
@@ -38,7 +45,7 @@ A curated collection of recommended tools, software, websites and more! **Which 
 </details>
 
 <details>
-<summary>📱 Mobile Browser</summary>
+<summary>Mobile Browser</summary>
 
 - [Tor Browser](https://www.torproject.org)
 - [WebLibre](https://github.com/FaFre/WebLibre)
@@ -51,7 +58,7 @@ A curated collection of recommended tools, software, websites and more! **Which 
 ## Browser Extensions
 
 <details>
-<summary>🔐 Browser Extensions</summary>
+<summary>Browser Extensions</summary>
 
 - [uBlock](https://github.com/gorhill/uBlock)
 - [I still don't care about cookies](https://github.com/OhMyGuus/I-Still-Dont-Care-About-Cookies)
@@ -67,7 +74,7 @@ A curated collection of recommended tools, software, websites and more! **Which 
 ## VPN
 
 <details>
-<summary>🔐 VPN</summary>
+<summary>Mullvad VPN</summary>
 
 - [Mullvad VPN](https://mullvad.net)
 
@@ -75,10 +82,10 @@ A curated collection of recommended tools, software, websites and more! **Which 
 
 ---
 
-## Maps
+## Navigation
 
 <details>
-<summary>🗺️ Maps</summary>
+<summary>CoMaps</summary>
 
 - [CoMaps](https://www.comaps.app)
 </details>
@@ -88,7 +95,7 @@ A curated collection of recommended tools, software, websites and more! **Which 
 ## Media Downloader
 
 <details>
-<summary>💾 Media downloader</summary>
+<summary>Web Media Downloaderr</summary>
 
 - [Cobalt Tools](https://cobalt.tools)
 </details>

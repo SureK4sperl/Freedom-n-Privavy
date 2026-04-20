@@ -95,7 +95,7 @@ A curated collection of recommended tools, software, websites and more! **Which 
 ## Media Downloader
 
 <details>
-<summary>Web Media Downloaderr</summary>
+<summary>Web Media Downloader</summary>
 
 - [Cobalt Tools](https://cobalt.tools)
 </details>

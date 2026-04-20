@@ -2,18 +2,88 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=https://github.com/k4sprl/Freedom-n-Privacy/blob/main/README.md">
-    
-    <script>
-        /* 2. The JavaScript Redirect (Fastest) */
-        window.location.replace("https://github.com/k4sprl/Freedom-n-Privacy/blob/main/README.md");
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freedom n' Privacy</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --text-color: #c9d1d9;
+            --accent-color: #58a6ff;
+            --border-color: #30363d;
+        }
 
-    <title>Redirecting...</title>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        #content {
+            max-width: 900px;
+            width: 100%;
+        }
+
+        /* Styling the Markdown content to look like your screenshot */
+        details {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+
+        summary {
+            font-weight: bold;
+            cursor: pointer;
+            list-style: none; /* Hide default arrow */
+        }
+
+        summary::-webkit-details-marker { display: none; } /* Hide arrow in Safari */
+
+        summary::before {
+            content: "▶ ";
+            font-size: 0.8em;
+        }
+
+        details[open] summary::before {
+            content: "▼ ";
+        }
+
+        a { color: var(--accent-color); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        
+        hr { border: 0; border-top: 1px solid var(--border-color); margin: 2rem 0; }
+        code { background: #21262d; padding: 0.2rem 0.4rem; border-radius: 6px; }
+    </style>
 </head>
 <body>
-    <p>Redirecting you to the README. If you are not redirected automatically, 
-       <a href="https://github.com/k4sprl/Freedom-n-Privacy/blob/main/README.md">click here</a>.
-    </p>
+
+    <div id="content">Loading latest tools...</div>
+
+    <script>
+        const repoUrl = "https://raw.githubusercontent.com/k4sprl/Freedom-n-Privacy/main/README.md";
+
+        async function loadReadme() {
+            try {
+                const response = await fetch(repoUrl);
+                const markdown = await response.text();
+                
+                // Convert Markdown to HTML using Marked.js
+                document.getElementById('content').innerHTML = marked.parse(markdown);
+            } catch (error) {
+                document.getElementById('content').innerHTML = "Failed to load content. Please check back later.";
+                console.error("Error fetching README:", error);
+            }
+        }
+
+        loadReadme();
+    </script>
 </body>
 </html>

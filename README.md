@@ -16,9 +16,16 @@ A curated collection of recommended tools, software, websites and more! **Which 
 ## Minecraft
 
 <details>
-<summary>Launcher</summary>
+<summary>Desktop Java Launcher</summary>
 
 - [Prism Launcher](https://prismlauncher.org)
+
+</details>
+
+<details>
+<summary>Mobile Java Launcher</summary>
+
+- [Amethyst Launcher](https://github.com/AngelAuraMC/Amethyst-Android)
 
 </details>
 
@@ -74,10 +81,20 @@ A curated collection of recommended tools, software, websites and more! **Which 
 ## VPN
 
 <details>
-<summary>Mullvad VPN</summary>
+<summary>Mullvad VPN (5€/mo)</summary>
 
 - [Mullvad VPN](https://mullvad.net)
 
+</details>
+
+---
+
+## Messenger
+
+<details>
+<summary>simplex.chat</summary>
+
+- [simplex.chat](https://simplex.chat)
 </details>
 
 ---
@@ -88,6 +105,7 @@ A curated collection of recommended tools, software, websites and more! **Which 
 <summary>CoMaps</summary>
 
 - [CoMaps](https://www.comaps.app)
+- [OpenStreetMap (source)](https://www.openstreetmap.org)
 </details>
 
 ---
@@ -95,7 +113,7 @@ A curated collection of recommended tools, software, websites and more! **Which 
 ## Media Downloader
 
 <details>
-<summary>Web Media Downloader</summary>
+<summary>Cobalt</summary>
 
-- [Cobalt Tools](https://cobalt.tools)
+- [Cobalt](https://cobalt.tools)
 </details>

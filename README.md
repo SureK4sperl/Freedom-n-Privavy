@@ -2,7 +2,7 @@
 
 G'day mate! Freedom and privacy, please.
 
-A curated collection of recommended tools, software, websites and more! **Which respect** **YOUR** freedom and privacy.
+Curated tools that respect **YOUR** digital rights. 
 
 ---
 ## Bulk Deletion

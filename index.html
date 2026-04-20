@@ -141,7 +141,7 @@
         </header>
 
         <div class="search-container">
-            <input type="text" id="searchBar" placeholder="Search for tools (e.g. 'VPN', 'Prism', 'Firefox')..." onkeyup="filterContent()">
+            <input type="text" id="searchBar" placeholder="Search for tools (e.g. 'VPN', 'Browser', 'Mullvad')..." onkeyup="filterContent()">
         </div>
 
         <div id="readme-content">
@@ -189,7 +189,7 @@
                     cat.style.display = "block";
                     // Optional: Auto-open if searching
                     if (query.length > 1) {
-                        // cat.open = true; // Uncomment if you want them to pop open while typing
+                        cat.open = true; // Uncomment if you want them to pop open while typing
                     }
                 } else {
                     cat.style.display = "none";

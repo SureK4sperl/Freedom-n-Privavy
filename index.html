@@ -4,86 +4,218 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Freedom n' Privacy</title>
+    
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
     <style>
         :root {
-            --bg-color: #0d1117;
-            --card-bg: #161b22;
-            --text-color: #c9d1d9;
-            --accent-color: #58a6ff;
-            --border-color: #30363d;
+            --bg-color: #1a1b1e;
+            --card-bg: #25262b;
+            --text-color: #c1c2c5;
+            --header-color: #ffffff;
+            --accent-blue: #3b82f6;
+            --border-color: #373a40;
+            --transition: all 0.3s ease;
+        }
+
+        /* Cursor Logic */
+        * {
+            cursor: default; /* Normal cursor for everything */
+            box-sizing: border-box;
+        }
+
+        a, summary, button, .interactive {
+            cursor: pointer; /* Click cursor for links/dropdowns */
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            font-family: 'JetBrains Mono', monospace;
             background-color: var(--bg-color);
             color: var(--text-color);
-            line-height: 1.6;
             margin: 0;
-            padding: 20px;
+            padding: 0;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0; /* For fade-in animation */
+            animation: fadeIn 0.8s ease forwards;
         }
 
-        #content {
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .container {
             max-width: 900px;
-            width: 100%;
+            width: 90%;
+            padding: 60px 0;
         }
 
-        /* Styling the Markdown content to look like your screenshot */
+        /* Hero Section */
+        .hero {
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: var(--header-color);
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        .btn-github {
+            background-color: var(--accent-blue);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: var(--transition);
+        }
+
+        .btn-github:hover {
+            filter: brightness(1.1);
+            transform: translateY(-2px);
+        }
+
+        /* Markdown Content Styling */
+        #readme-content {
+            margin-top: 40px;
+        }
+
         details {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 6px;
-            margin-bottom: 10px;
-            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        details[open] {
+            border-color: var(--accent-blue);
         }
 
         summary {
+            padding: 20px;
             font-weight: bold;
-            cursor: pointer;
-            list-style: none; /* Hide default arrow */
+            color: var(--header-color);
+            list-style: none;
+            display: flex;
+            align-items: center;
+            transition: var(--transition);
         }
 
-        summary::-webkit-details-marker { display: none; } /* Hide arrow in Safari */
+        summary:hover {
+            background: #2c2e33;
+        }
 
         summary::before {
-            content: "▶ ";
-            font-size: 0.8em;
+            content: '▶';
+            font-size: 0.7em;
+            margin-right: 15px;
+            transition: transform 0.2s;
         }
 
         details[open] summary::before {
-            content: "▼ ";
+            transform: rotate(90deg);
+            color: var(--accent-blue);
         }
 
-        a { color: var(--accent-color); text-decoration: none; }
+        .content-inner {
+            padding: 0 20px 20px 50px;
+            border-top: 1px solid var(--border-color);
+            animation: slideDown 0.3s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        ul { padding-left: 20px; }
+        li { margin: 10px 0; }
+        a { color: var(--accent-blue); text-decoration: none; }
         a:hover { text-decoration: underline; }
-        
-        hr { border: 0; border-top: 1px solid var(--border-color); margin: 2rem 0; }
-        code { background: #21262d; padding: 0.2rem 0.4rem; border-radius: 6px; }
+
+        /* Footer */
+        footer {
+            margin-top: 100px;
+            padding: 40px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            font-size: 0.8rem;
+            width: 100%;
+        }
+
+        .unlicense {
+            opacity: 0.6;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
 
-    <div id="content">Loading latest tools...</div>
+    <div class="container">
+        <section class="hero">
+            <h1>Freedom n' Privacy</h1>
+            <p>
+                A curated collection of recommended tools and software 
+                that respect <b>YOUR</b> freedom and privacy. No tracking, no BS.
+            </p>
+            <a href="https://github.com/k4sprl/Freedom-n-Privacy" class="btn-github">View on GitHub</a>
+        </section>
+
+        <div id="readme-content">
+            <p>Fetching encrypted data...</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="unlicense">This project is released under the <b>Unlicense</b> (Public Domain).</div>
+        <div>Open Source & Community Driven</div>
+    </footer>
 
     <script>
-        const repoUrl = "https://raw.githubusercontent.com/k4sprl/Freedom-n-Privacy/main/README.md";
+        // Use a slightly delayed fetch to deter very basic scraper bots
+        setTimeout(async () => {
+            const rawUrl = "https://raw.githubusercontent.com/k4sprl/Freedom-n-Privacy/main/README.md";
+            const contentDiv = document.getElementById('readme-content');
 
-        async function loadReadme() {
             try {
-                const response = await fetch(repoUrl);
+                const response = await fetch(rawUrl);
                 const markdown = await response.text();
                 
-                // Convert Markdown to HTML using Marked.js
-                document.getElementById('content').innerHTML = marked.parse(markdown);
-            } catch (error) {
-                document.getElementById('content').innerHTML = "Failed to load content. Please check back later.";
-                console.error("Error fetching README:", error);
-            }
-        }
+                // Remove the title/intro from the README since we have a custom Hero section
+                // This assumes your README starts with # Freedom n' Privacy
+                const cleanMarkdown = markdown.replace(/^# Freedom n' Privacy[\s\S]*?(?=<details>)/i, '');
 
-        loadReadme();
+                contentDiv.innerHTML = marked.parse(cleanMarkdown);
+
+                // Wrap the content of each detail for animation purposes
+                document.querySelectorAll('details').forEach(detail => {
+                    const nodes = Array.from(detail.childNodes).filter(n => n.nodeName !== 'SUMMARY');
+                    const wrapper = document.createElement('div');
+                    wrapper.className = 'content-inner';
+                    nodes.forEach(n => wrapper.appendChild(n));
+                    detail.appendChild(wrapper);
+                });
+
+            } catch (error) {
+                contentDiv.innerHTML = "<p>Failed to load tools. Check your connection.</p>";
+            }
+        }, 300);
     </script>
 </body>
 </html>

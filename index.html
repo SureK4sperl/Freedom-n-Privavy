@@ -6,7 +6,6 @@
     <title>Freedom n' Privacy</title>
     
     <meta name="robots" content="noindex, nofollow, noarchive">
-    
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
@@ -18,18 +17,13 @@
             --header-color: #ffffff;
             --accent-blue: #3b82f6;
             --border-color: #373a40;
-            --transition: all 0.3s ease;
+            --transition: all 0.2s ease;
         }
 
         /* Cursor Logic */
-        * {
-            cursor: default; /* Normal cursor for everything */
-            box-sizing: border-box;
-        }
-
-        a, summary, button, .interactive {
-            cursor: pointer; /* Click cursor for links/dropdowns */
-        }
+        * { cursor: default; box-sizing: border-box; }
+        a, summary, button, input, .btn-github { cursor: pointer; }
+        input:focus { cursor: text; }
 
         body {
             font-family: 'JetBrains Mono', monospace;
@@ -40,86 +34,74 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            opacity: 0; /* For fade-in animation */
+            opacity: 0;
             animation: fadeIn 0.8s ease forwards;
         }
 
-        @keyframes fadeIn {
-            to { opacity: 1; }
+        @keyframes fadeIn { to { opacity: 1; } }
+
+        .container { max-width: 900px; width: 90%; padding: 60px 0; }
+
+        /* Hero & Search */
+        h1 { font-size: 3rem; color: var(--header-color); margin-bottom: 10px; letter-spacing: -1px; }
+        
+        .search-container {
+            margin: 30px 0;
+            position: relative;
         }
 
-        .container {
-            max-width: 900px;
-            width: 90%;
-            padding: 60px 0;
-        }
-
-        /* Hero Section */
-        .hero {
-            margin-bottom: 50px;
-        }
-
-        h1 {
-            font-size: 3rem;
-            color: var(--header-color);
-            margin-bottom: 20px;
-            letter-spacing: -1px;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            max-width: 600px;
-            margin-bottom: 30px;
-        }
-
-        .btn-github {
-            background-color: var(--accent-blue);
-            color: white;
-            padding: 12px 24px;
+        #searchBar {
+            width: 100%;
+            padding: 15px 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
             border-radius: 4px;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
+            color: white;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1rem;
+            outline: none;
             transition: var(--transition);
         }
 
-        .btn-github:hover {
-            filter: brightness(1.1);
-            transform: translateY(-2px);
+        #searchBar:focus { border-color: var(--accent-blue); box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2); }
+
+        .btn-github {
+            background-color: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--accent-blue);
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            display: inline-block;
+            margin-top: 10px;
         }
 
-        /* Markdown Content Styling */
-        #readme-content {
-            margin-top: 40px;
-        }
+        .btn-github:hover { background: var(--border-color); color: white; }
+
+        /* Content Area */
+        #readme-content { margin-top: 20px; min-height: 300px; }
 
         details {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 8px;
-            margin-bottom: 12px;
+            border-radius: 4px;
+            margin-bottom: 8px;
             overflow: hidden;
-            transition: var(--transition);
-        }
-
-        details[open] {
-            border-color: var(--accent-blue);
+            transition: opacity 0.3s ease;
         }
 
         summary {
-            padding: 20px;
+            padding: 18px;
             font-weight: bold;
             color: var(--header-color);
             list-style: none;
             display: flex;
             align-items: center;
-            transition: var(--transition);
         }
 
-        summary:hover {
-            background: #2c2e33;
-        }
+        summary:hover { background: #2c2e33; }
 
         summary::before {
             content: '▶';
@@ -128,82 +110,62 @@
             transition: transform 0.2s;
         }
 
-        details[open] summary::before {
-            transform: rotate(90deg);
-            color: var(--accent-blue);
-        }
+        details[open] summary::before { transform: rotate(90deg); color: var(--accent-blue); }
 
         .content-inner {
             padding: 0 20px 20px 50px;
             border-top: 1px solid var(--border-color);
-            animation: slideDown 0.3s ease-out;
         }
 
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        ul { padding-left: 20px; }
-        li { margin: 10px 0; }
         a { color: var(--accent-blue); text-decoration: none; }
         a:hover { text-decoration: underline; }
 
-        /* Footer */
         footer {
-            margin-top: 100px;
+            margin-top: 60px;
             padding: 40px;
             border-top: 1px solid var(--border-color);
             text-align: center;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             width: 100%;
-        }
-
-        .unlicense {
             opacity: 0.6;
-            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <section class="hero">
+        <header>
             <h1>Freedom n' Privacy</h1>
-            <p>
-                A curated collection of recommended tools and software 
-                that respect <b>YOUR</b> freedom and privacy. No tracking, no BS.
-            </p>
-            <a href="https://github.com/k4sprl/Freedom-n-Privacy" class="btn-github">View on GitHub</a>
-        </section>
+            <p>Curated tools that respect <b>YOUR</b> digital rights.</p>
+            <a href="https://github.com/k4sprl/Freedom-n-Privacy" class="btn-github">GitHub Repository</a>
+        </header>
+
+        <div class="search-container">
+            <input type="text" id="searchBar" placeholder="Search for tools (e.g. 'VPN', 'Prism', 'Firefox')..." onkeyup="filterContent()">
+        </div>
 
         <div id="readme-content">
-            <p>Fetching encrypted data...</p>
+            <p>Initializing secure connection...</p>
         </div>
     </div>
 
     <footer>
-        <div class="unlicense">This project is released under the <b>Unlicense</b> (Public Domain).</div>
-        <div>Open Source & Community Driven</div>
+        <p>Released under the <b>Unlicense</b> | Open Source Project</p>
     </footer>
 
     <script>
-        // Use a slightly delayed fetch to deter very basic scraper bots
-        setTimeout(async () => {
+        // Load Readme
+        async function loadContent() {
             const rawUrl = "https://raw.githubusercontent.com/k4sprl/Freedom-n-Privacy/main/README.md";
-            const contentDiv = document.getElementById('readme-content');
-
             try {
                 const response = await fetch(rawUrl);
                 const markdown = await response.text();
-                
-                // Remove the title/intro from the README since we have a custom Hero section
-                // This assumes your README starts with # Freedom n' Privacy
+                // Filter out the main header from the README to avoid duplicates
                 const cleanMarkdown = markdown.replace(/^# Freedom n' Privacy[\s\S]*?(?=<details>)/i, '');
+                
+                document.getElementById('readme-content').innerHTML = marked.parse(cleanMarkdown);
 
-                contentDiv.innerHTML = marked.parse(cleanMarkdown);
-
-                // Wrap the content of each detail for animation purposes
+                // Add the content-inner wrapper to all details for styling
                 document.querySelectorAll('details').forEach(detail => {
                     const nodes = Array.from(detail.childNodes).filter(n => n.nodeName !== 'SUMMARY');
                     const wrapper = document.createElement('div');
@@ -211,11 +173,31 @@
                     nodes.forEach(n => wrapper.appendChild(n));
                     detail.appendChild(wrapper);
                 });
-
-            } catch (error) {
-                contentDiv.innerHTML = "<p>Failed to load tools. Check your connection.</p>";
+            } catch (e) {
+                document.getElementById('readme-content').innerHTML = "Error loading tools.";
             }
-        }, 300);
+        }
+
+        // Search Functionality
+        function filterContent() {
+            const query = document.getElementById('searchBar').value.toLowerCase();
+            const categories = document.querySelectorAll('details');
+
+            categories.forEach(cat => {
+                const text = cat.innerText.toLowerCase();
+                if (text.includes(query)) {
+                    cat.style.display = "block";
+                    // Optional: Auto-open if searching
+                    if (query.length > 1) {
+                        // cat.open = true; // Uncomment if you want them to pop open while typing
+                    }
+                } else {
+                    cat.style.display = "none";
+                }
+            });
+        }
+
+        window.onload = loadContent;
     </script>
 </body>
 </html>

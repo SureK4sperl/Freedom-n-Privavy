@@ -38,8 +38,6 @@ Curated tools that respect **YOUR** digital rights.
 
 </details>
 
----
-
 ## Browser
 
 <details>
@@ -60,8 +58,6 @@ Curated tools that respect **YOUR** digital rights.
 
 </details>
 
----
-
 ## Browser Extensions
 
 <details>
@@ -76,8 +72,6 @@ Curated tools that respect **YOUR** digital rights.
 
 </details>
 
----
-
 ## VPN
 
 <details>
@@ -87,8 +81,6 @@ Curated tools that respect **YOUR** digital rights.
 
 </details>
 
----
-
 ## Messenger
 
 <details>
@@ -96,8 +88,6 @@ Curated tools that respect **YOUR** digital rights.
 
 - [simplex.chat](https://simplex.chat)
 </details>
-
----
 
 ## Navigation
 
@@ -107,8 +97,6 @@ Curated tools that respect **YOUR** digital rights.
 - [CoMaps](https://www.comaps.app)
 - [OpenStreetMap (source)](https://www.openstreetmap.org)
 </details>
-
----
 
 ## Media Downloader
 

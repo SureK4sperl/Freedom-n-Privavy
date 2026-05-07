@@ -2,7 +2,7 @@
 
 G'day mate! Freedom and privacy, please.
 
-Curated tools that respect **YOUR** digital rights. 
+Curated tools that respect **YOUR** digital rights.
 
 ---
 ## Bulk Deletion
@@ -84,7 +84,7 @@ Curated tools that respect **YOUR** digital rights.
 ## Messenger
 
 <details>
-<summary>simplex.chat</summary>
+<summary>simpleX.chat</summary>
 
 - [simplex.chat](https://simplex.chat)
 </details>
@@ -101,7 +101,15 @@ Curated tools that respect **YOUR** digital rights.
 ## Media Downloader
 
 <details>
-<summary>Cobalt</summary>
+<summary>Social Media</summary>
 
 - [Cobalt](https://cobalt.tools)
 </details>
+
+<details>
+<summary>Music</summary>
+
+- [Nicotine+](https://nicotine-plus.org)
+</details>
+
+# I am not responsable for how/if you use these tools.
